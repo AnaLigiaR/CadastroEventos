@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventos.Views.CadastroEvento"
+             Title="CadastroEvento"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black">    
+    
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10"
+                         Spacing="10">
+        <Label 
+            Text="Cadastro do Evento"
+            FontSize="30"
+            TextColor="Goldenrod"
+            HorizontalOptions="Center"/>
+        
+        <Frame Padding="10">
+            <VerticalStackLayout>               
+
+                    <Label 
+                           Text="Nome do evento: "
+                           TextColor="Goldenrod"/>
+                    <Entry x:Name="txt_nomeevento"/>
+
+               
+            </VerticalStackLayout>
+        </Frame>
+
+        <Frame Padding="10"
+               Margin="10">
+            <VerticalStackLayout Spacing="10">
+
+                <Label Text="Período do Evento"
+                               TextTransform="Uppercase"
+                               FontSize="Subtitle"
+                               TextColor="Goldenrod"
+                               HorizontalOptions="Center"/>
+
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                    
+                    <Label Text="Início:" />
+                    <DatePicker x:Name="dtpck_inicio"
+                                DateSelected="dtpck_inicio_DateSelected"
+                                Format="dd/MM/yyyy" />
+                    
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                    
+                    <Label Text="Final:" />
+                    <DatePicker x:Name="dtpck_final"
+                                Format="dd/MM/yyyy" />
+                    
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Frame Padding="10">
+            <VerticalStackLayout>
+
+                <Label 
+                   Text="Número de particiantes: "
+                   TextColor="Goldenrod"/>
+                <Entry x:Name="txt_nparticipantes"/>
+
+                <Label
+                    Text="Local do Evento: "
+                    TextColor="Goldenrod"/>
+                <Entry x:Name="txt_local"/>
+
+                <Label
+                    Text="Custo por participante:"
+                    TextColor="Goldenrod"/>
+                <Entry x:Name="txt_custoparticipante"/>
+
+
+            </VerticalStackLayout>
+        </Frame>
+
+        <Button Text="Avançar"
+                HorizontalOptions="Center"
+                BackgroundColor="Goldenrod"
+                Clicked="Button_Clicked"/>
+        
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventos.Views.EventoContratado"
+             Title="EventoContratado"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black">
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand">
+        
+        <Label 
+            Text="Evento Contratado"
+            TextColor="Goldenrod"
+            FontSize="30"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Frame Margin="10">
+            <StackLayout Orientation="Horizontal">
+                <HorizontalStackLayout>
+
+                    <Label Text="Nome Evento: "
+                           TextColor="Goldenrod"/>
+                    <Label Text="{Binding NomeEvento}"/>
+                    
+                </HorizontalStackLayout>
+            </StackLayout>
+        </Frame>
+
+        <Frame Margin="10">
+            <Grid ColumnDefinitions="*, *, *"
+                  RowDefinitions="Auto, Auto">
+                <Label Grid.Row="0" Grid.Column="0" Text="Data Início: "/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Data Fim: "/>
+                <Label Grid.Row="0" Grid.Column="2" Text="Duração: "/>
+
+                <Label Grid.Row="1" Grid.Column="0" 
+                       Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+
+                <Label Grid.Row="1" Grid.Column="1" 
+                       Text="{Binding DataFinal, StringFormat='{}{0:dd/MM/yyyy}'}" />
+
+                <Label Grid.Row="1" Grid.Column="2" 
+                       Text="{Binding Estadia}"/>
+                
+            </Grid>
+        </Frame>
+
+        <Frame Margin="10">
+            <Grid RowDefinitions="Auto, Auto, Auto, Auto"
+                  ColumnDefinitions="*, *">
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Local do evento: "
+                    TextColor="Goldenrod"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Local}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Participantes: "
+                           TextColor="Goldenrod"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding NumeroParticipantes}"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Valor Participantes:"
+                       TextColor="Goldenrod"/>
+                <Label Grid.Row="2" Grid.Column="1" Text="{Binding ValorParticipante}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Valor Total: "
+                       TextColor="Goldenrod"/>
+                <Label Grid.Row="3" Grid.Column="1" Text="{Binding ValorTotal}"/>
+
+            </Grid>
+        </Frame>
+
+        <Button Text="Voltar"
+                HorizontalOptions="Center"
+                Clicked="Button_Clicked"
+                BackgroundColor="Goldenrod"/>
+
+    </VerticalStackLayout>
+</ContentPage>
